@@ -58,11 +58,5 @@ static void usage(int argc, const char *argv[]) {
 }
 
 static NSString *NSStringByEscapingForShell(NSString *string) {
-	NSArray * const charactersToEscape = @[ @"\\", @" ", @"(", @")", @"\"", @"&", @"'", @"!", @"$", @"<", @">", @";", @"|", @"*", @"?", @"[", @"]", @"#", @"`" ];
-
-	NSMutableString *scratch = [NSMutableString stringWithString:string ?: @""];
-	for (NSString *characterToEscape in charactersToEscape) {
-		[scratch replaceOccurrencesOfString:characterToEscape withString:[@"\\" stringByAppendingString:characterToEscape] options:0 range:NSMakeRange(0, [scratch length])];
-	}
-	return scratch;
+	return [NSString stringWithFormat:@"'%@'", [string stringByReplacingOccurrencesOfString:@"'" withString:@"'\\''" options:0 range:NSMakeRange(0, [string length])]];
 }
