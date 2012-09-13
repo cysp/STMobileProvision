@@ -30,7 +30,7 @@
 		2C2B05CF15FC3100000861E2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		2C2B05D415FC3100000861E2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2C2B05ED15FC3101000861E2 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		2C9222BA16007D72005BA24A /* STMobileProvisionCLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = STMobileProvisionCLI; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C9222BA16007D72005BA24A /* STMobileProvision */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = STMobileProvision; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C9222BF16007D72005BA24A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2C9222CA16007EE5005BA24A /* STMobileProvision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMobileProvision.m; sourceTree = "<group>"; };
 		2C9222CC16007F15005BA24A /* STMobileProvision.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STMobileProvision.h; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 		2C2B05CC15FC3100000861E2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2C9222BA16007D72005BA24A /* STMobileProvisionCLI */,
+				2C9222BA16007D72005BA24A /* STMobileProvision */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,9 +103,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2C9222B916007D72005BA24A /* STMobileProvisionCLI */ = {
+		2C9222B916007D72005BA24A /* STMobileProvision */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2C9222C716007D72005BA24A /* Build configuration list for PBXNativeTarget "STMobileProvisionCLI" */;
+			buildConfigurationList = 2C9222C716007D72005BA24A /* Build configuration list for PBXNativeTarget "STMobileProvision" */;
 			buildPhases = (
 				2C9222B616007D72005BA24A /* Sources */,
 				2C9222B716007D72005BA24A /* Frameworks */,
@@ -115,9 +115,9 @@
 			);
 			dependencies = (
 			);
-			name = STMobileProvisionCLI;
+			name = STMobileProvision;
 			productName = STMobileProvisionUUIDExtractorCLI;
-			productReference = 2C9222BA16007D72005BA24A /* STMobileProvisionCLI */;
+			productReference = 2C9222BA16007D72005BA24A /* STMobileProvision */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -130,7 +130,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Scott Talbot";
 			};
-			buildConfigurationList = 2C2B05C515FC3100000861E2 /* Build configuration list for PBXProject "STMobileProvisionCLI" */;
+			buildConfigurationList = 2C2B05C515FC3100000861E2 /* Build configuration list for PBXProject "STMobileProvision" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -142,7 +142,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2C9222B916007D72005BA24A /* STMobileProvisionCLI */,
+				2C9222B916007D72005BA24A /* STMobileProvision */,
 			);
 		};
 /* End PBXProject section */
@@ -234,7 +234,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PRODUCT_NAME = STMobileProvisionCLI;
+				PRODUCT_NAME = STMobileProvision;
 			};
 			name = Debug;
 		};
@@ -242,14 +242,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PRODUCT_NAME = STMobileProvisionCLI;
+				PRODUCT_NAME = STMobileProvision;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2C2B05C515FC3100000861E2 /* Build configuration list for PBXProject "STMobileProvisionCLI" */ = {
+		2C2B05C515FC3100000861E2 /* Build configuration list for PBXProject "STMobileProvision" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2C2B05FB15FC3101000861E2 /* Debug */,
@@ -258,13 +258,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2C9222C716007D72005BA24A /* Build configuration list for PBXNativeTarget "STMobileProvisionCLI" */ = {
+		2C9222C716007D72005BA24A /* Build configuration list for PBXNativeTarget "STMobileProvision" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2C9222C516007D72005BA24A /* Debug */,
 				2C9222C616007D72005BA24A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
