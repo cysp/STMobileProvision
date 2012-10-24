@@ -29,7 +29,9 @@
 }
 
 - (void)dealloc {
-	CFRelease(_certificate), _certificate = NULL;
+	if (_certificate) {
+		CFRelease(_certificate), _certificate = NULL;
+	}
 }
 
 
