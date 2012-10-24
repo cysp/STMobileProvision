@@ -37,13 +37,6 @@
 
 - (NSString *)subjectName {
 	return CFBridgingRelease(SecCertificateCopySubjectSummary(_certificate));
-	CFStringRef commonName = NULL;
-	OSStatus err = SecCertificateCopyCommonName(_certificate, &commonName);
-	if (err != errSecSuccess) {
-		return nil;
-	}
-
-	return CFBridgingRelease(commonName);
 }
 
 @end
