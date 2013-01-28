@@ -12,6 +12,9 @@
 		2C9222CD16008575005BA24A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2B05D415FC3100000861E2 /* Foundation.framework */; };
 		2C9222CF1600859A005BA24A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9222CE1600859A005BA24A /* Security.framework */; };
 		2C9222D216008783005BA24A /* STCertificate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9222D116008783005BA24A /* STCertificate.m */; };
+		2CCE16AF16B6330F00C42C7B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2B05ED15FC3101000861E2 /* SenTestingKit.framework */; };
+		2CCE16B016B6330F00C42C7B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2B05CF15FC3100000861E2 /* Cocoa.framework */; };
+		2CCE16BD16B6330F00C42C7B /* STMobileProvisionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCE16BC16B6330F00C42C7B /* STMobileProvisionTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +40,10 @@
 		2C9222CE1600859A005BA24A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		2C9222D016008783005BA24A /* STCertificate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STCertificate.h; sourceTree = "<group>"; };
 		2C9222D116008783005BA24A /* STCertificate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STCertificate.m; sourceTree = "<group>"; };
+		2CCE16AE16B6330F00C42C7B /* STMobileProvisionTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STMobileProvisionTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CCE16B716B6330F00C42C7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CCE16BB16B6330F00C42C7B /* STMobileProvisionTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STMobileProvisionTests.h; sourceTree = "<group>"; };
+		2CCE16BC16B6330F00C42C7B /* STMobileProvisionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STMobileProvisionTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +56,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2CCE16AA16B6330F00C42C7B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CCE16AF16B6330F00C42C7B /* SenTestingKit.framework in Frameworks */,
+				2CCE16B016B6330F00C42C7B /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -57,6 +73,7 @@
 			children = (
 				2C9222BE16007D72005BA24A /* STMobileProvisionCLI */,
 				2C9222C916007E6F005BA24A /* STMobileProvision */,
+				2CCE16B516B6330F00C42C7B /* STMobileProvisionTests */,
 				2C2B05CE15FC3100000861E2 /* Frameworks */,
 				2C2B05CC15FC3100000861E2 /* Products */,
 			);
@@ -66,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				2C9222BA16007D72005BA24A /* STMobileProvision */,
+				2CCE16AE16B6330F00C42C7B /* STMobileProvisionTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,6 +118,16 @@
 			path = STMobileProvision;
 			sourceTree = "<group>";
 		};
+		2CCE16B516B6330F00C42C7B /* STMobileProvisionTests */ = {
+			isa = PBXGroup;
+			children = (
+				2CCE16B716B6330F00C42C7B /* Info.plist */,
+				2CCE16BB16B6330F00C42C7B /* STMobileProvisionTests.h */,
+				2CCE16BC16B6330F00C42C7B /* STMobileProvisionTests.m */,
+			);
+			path = STMobileProvisionTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,6 +147,24 @@
 			productName = STMobileProvisionUUIDExtractorCLI;
 			productReference = 2C9222BA16007D72005BA24A /* STMobileProvision */;
 			productType = "com.apple.product-type.tool";
+		};
+		2CCE16AD16B6330F00C42C7B /* STMobileProvisionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2CCE16C116B6330F00C42C7B /* Build configuration list for PBXNativeTarget "STMobileProvisionTests" */;
+			buildPhases = (
+				2CCE16A916B6330F00C42C7B /* Sources */,
+				2CCE16AA16B6330F00C42C7B /* Frameworks */,
+				2CCE16AB16B6330F00C42C7B /* Resources */,
+				2CCE16AC16B6330F00C42C7B /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = STMobileProvisionTests;
+			productName = STMobileProvisionTests;
+			productReference = 2CCE16AE16B6330F00C42C7B /* STMobileProvisionTests.octest */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -143,9 +189,36 @@
 			projectRoot = "";
 			targets = (
 				2C9222B916007D72005BA24A /* STMobileProvision */,
+				2CCE16AD16B6330F00C42C7B /* STMobileProvisionTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2CCE16AB16B6330F00C42C7B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2CCE16AC16B6330F00C42C7B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2C9222B616007D72005BA24A /* Sources */ = {
@@ -155,6 +228,14 @@
 				2C9222C016007D72005BA24A /* main.m in Sources */,
 				2C9222CB16007EE5005BA24A /* STMobileProvision.m in Sources */,
 				2C9222D216008783005BA24A /* STCertificate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CCE16A916B6330F00C42C7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CCE16BD16B6330F00C42C7B /* STMobileProvisionTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +327,38 @@
 			};
 			name = Release;
 		};
+		2CCE16BF16B6330F00C42C7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				INFOPLIST_FILE = STMobileProvisionTests/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		2CCE16C016B6330F00C42C7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				INFOPLIST_FILE = STMobileProvisionTests/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -266,6 +379,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		2CCE16C116B6330F00C42C7B /* Build configuration list for PBXNativeTarget "STMobileProvisionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CCE16BF16B6330F00C42C7B /* Debug */,
+				2CCE16C016B6330F00C42C7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
