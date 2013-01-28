@@ -13,61 +13,19 @@
 #import "STCertificate.h"
 
 
+static NSDictionary *STMobileProvisionDictionaryFromData(NSData *data);
+
+
 @interface STMobileProvision ()
 @property (nonatomic,strong,readonly) NSDictionary *entitlements;
 @end
-
 
 @implementation STMobileProvision {
 	NSDictionary *_dict;
 }
 
 - (instancetype)initWithData:(NSData *)data {
-	NSDictionary *profileDict = nil;
-
-	do {
-		CMSDecoderRef decoder = NULL;
-		{
-			OSStatus err = CMSDecoderCreate(&decoder);
-			if (err != errSecSuccess) {
-				break;
-			}
-		}
-		if (!decoder) {
-			break;
-		}
-
-		NSData *mobileprovisionContentData = nil;
-		do {
-			if (CMSDecoderUpdateMessage(decoder, [data bytes], [data length]) != errSecSuccess) {
-				break;
-			}
-			if (CMSDecoderFinalizeMessage(decoder) != errSecSuccess) {
-				break;
-			}
-
-			CFDataRef contentData = NULL;
-			Boolean contentIsEncrypted = NO;
-			if (CMSDecoderIsContentEncrypted(decoder, &contentIsEncrypted) != errSecSuccess) {
-				break;
-			}
-			if (CMSDecoderCopyContent(decoder, &contentData) != errSecSuccess) {
-				break;
-			}
-			mobileprovisionContentData = CFBridgingRelease(contentData);
-		} while (0);
-
-		CFRelease(decoder), decoder = NULL;
-
-		if (!mobileprovisionContentData) {
-			break;
-		}
-		profileDict = [NSPropertyListSerialization propertyListWithData:mobileprovisionContentData options:NSPropertyListImmutable format:NULL error:NULL];
-		if (![profileDict isKindOfClass:[NSDictionary class]]) {
-			break;
-		}
-	} while (0);
-
+	NSDictionary *profileDict = STMobileProvisionDictionaryFromData(data);
 	if (!profileDict) {
 		return nil;
 	}
@@ -113,3 +71,46 @@
 }
 
 @end
+
+
+static NSDictionary *STMobileProvisionDictionaryFromData(NSData *data) {
+	CMSDecoderRef decoder = NULL;
+	{
+		OSStatus err = CMSDecoderCreate(&decoder);
+		if (err != errSecSuccess) {
+			return nil;
+		}
+	}
+	if (!decoder) {
+		return nil;
+	}
+
+	NSData *mobileprovisionContentData = nil;
+	do {
+		if (CMSDecoderUpdateMessage(decoder, [data bytes], [data length]) != errSecSuccess) {
+			break;
+		}
+		if (CMSDecoderFinalizeMessage(decoder) != errSecSuccess) {
+			break;
+		}
+
+		CFDataRef contentData = NULL;
+		if (CMSDecoderCopyContent(decoder, &contentData) != errSecSuccess) {
+			break;
+		}
+		mobileprovisionContentData = (__bridge_transfer NSData *)contentData;
+	} while (0);
+
+	CFRelease(decoder), decoder = NULL;
+
+	if (!mobileprovisionContentData) {
+		return nil;
+	}
+
+	id profileObject = [NSPropertyListSerialization propertyListWithData:mobileprovisionContentData options:NSPropertyListImmutable format:NULL error:NULL];
+	if ([profileObject isKindOfClass:[NSDictionary class]]) {
+		return profileObject;
+	}
+
+	return nil;
+}
